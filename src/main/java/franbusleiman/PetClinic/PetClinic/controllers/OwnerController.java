@@ -36,16 +36,19 @@ private final VetService vetService;
         }
 
         @RequestMapping({"/ownerSaver", "ownerSaver"})
-    public String saveOwner(HttpServletRequest request, Model model, Owner owner, Vet vet){
+    public String saveOwner(HttpServletRequest request, Model model, Owner owner){
 
             ownerService.save(owner);
 
        int  vet_id = Integer.parseInt(request.getParameter("vet_Id"));
 
-        owner.setVet( vetService.findById(vet_id).get());
+       if(vetService.findById(vet_id).isPresent()) {
 
-            vetService.findById(vet_id).get().getOwners().add(owner);
-
+           owner.setVet(vetService.findById(vet_id).get());
+       }
+            if(vetService.findById(vet_id).isPresent()) {
+                vetService.findById(vet_id).get().getOwners().add(owner);
+            }
         model.addAttribute("vet_id", vet_id);
         model.addAttribute("owner_id", owner.getId());
 

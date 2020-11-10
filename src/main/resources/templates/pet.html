@@ -6,11 +6,11 @@
 </head>
 <body>
 
-<form name="formularioPet" method="post" action="/petSaver?vet_Id=${vet_id}&owner_Id=${owner_id}">
+<form name="formularioPet" method="post" th:action="@{/petSaver(vet_id=${vet_id},owner_id=${owner_id})}">
 
-    First Name: <input type="text" name="name" value="Escriba el nombre de su perro">
+    Dog Name: <input type="text" name="name" value="Escriba el nombre de su perro">
     <br/>
-    Last Name: <input type="text" name="petType" value="Escriba la raza de su perro">
+    Dog Type: <input type="text" name="petType" value="Escriba la raza de su perro">
 
     <input type="submit" value="Enviar">
 

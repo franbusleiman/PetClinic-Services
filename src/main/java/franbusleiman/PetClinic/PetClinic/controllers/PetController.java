@@ -27,28 +27,28 @@ public class PetController {
     }
 
     @RequestMapping("/petSaver")
-    public String savePet(HttpServletRequest request, Model model, Pet pet, Owner owner, Vet vet){
-
-        model.addAttribute("pet", pet);
+    public String savePet(HttpServletRequest request, Model model, Pet pet){
 
         petService.save(pet);
 
         int  vet_id = Integer.parseInt(request.getParameter("vet_id"));
+        int owner_id = Integer.parseInt(request.getParameter("owner_id"));
 
-        Vet vet1 = vetService.findById(vet_id).get();
+        if(vetService.findById(vet_id).isPresent()) {
+            pet.setVet(vetService.findById(vet_id).get());
+        }
+        if(vetService.findById(vet_id).isPresent()) {
+            vetService.findById(vet_id).get().getPets().add(pet);
+        }
+        if(ownerService.findById(owner_id).isPresent()) {
+            pet.setOwner(ownerService.findById(owner_id).get());
+        }
+        if(ownerService.findById(owner_id).isPresent()) {
+            ownerService.findById(owner_id).get().setPet(pet);
+        }
 
-        int  owner_id = Integer.parseInt(request.getParameter("owner_id"));
 
-        Owner owner1 = ownerService.findById(owner_id).get();
-
-
-
-        owner1.setPet(pet);
-        pet.setOwner(owner1);
-       pet.setVet(vet1);
-       vet.getPets().add(pet);
-
-        return "index.html";
+        return "index";
     }
 
 }

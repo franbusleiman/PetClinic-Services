@@ -14,10 +14,10 @@ public class Pet {
 
     private String petType;
     @OneToOne
-    @JoinColumn(name= "owner_id")
+    @JoinColumn(name = "owner_id")
     private Owner owner;
    @ManyToOne
-   @JoinColumn(name="vet_id")
+   @JoinColumn(name ="vet_id")
     private Vet vet;
 
     public Pet() {

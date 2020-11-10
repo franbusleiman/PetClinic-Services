@@ -3,7 +3,9 @@ package franbusleiman.PetClinic.PetClinic.BootStrapData;
 import franbusleiman.PetClinic.PetClinic.model.Vet;
 import franbusleiman.PetClinic.PetClinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataLoader implements CommandLineRunner {
 
     private final VetService vetService;
