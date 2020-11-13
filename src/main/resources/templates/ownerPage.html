@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloVeterinaria.css}">
 </head>
 <body>
-OWNER
-<br/>
+<div class="container">
+    <a href="index.html" id="volver">Volver al inicio</a>
 <form th:form="formularioOwner" name="formularioOwner" method="post" th:action="@{/ownerSaver(vet_id=${vet_id})}">
 
-    First Name: <input type="text" name="firstName" value="Escriba su primer nombre">
+ <p>  First Name: <br/><input type="text" name="firstName"  class="input">
     <br/>
-    Last Name: <input type="text" name="lastName" value="Escriba su apellido">
+    <p>  Last Name: </p> <input type="text" name="lastName" class="input">
     <br/>
-    Telephone Number: <input type="text" name="telephoneNumber" value="Escriba su nº tel.">
-    <input type="submit" value="Enviar">
+    <p>  Telephone Number:</p>  <input type="text" name="telephoneNumber" class="input">
+    <br/>
+    <input type="submit" value="Enviar" class="button">
 
 
 
 </form>
-
-
 <br>
-<a href="index.html">Volver al inicio</a>
+
+
+
+
+
+
+</div>
+
+<footer>
+
+    PULGUITAS
+
+    <p th:id="telefono">TEL:3512426215</p>
+    <p th:id="direccion">Deán Funes 1308</p>
+
+</footer>
+
 </body>
 </html>

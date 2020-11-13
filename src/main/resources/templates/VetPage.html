@@ -2,24 +2,41 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Veterinarios</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloVeterinaria.css}">
 </head>
 <body>
 
-Que veterinario anda ahí?
+<div class="container">
+    <a href="index.html" id="volver">Volver al inicio</a>
+    <h1 th:align="center">Quien anda ahí?</h1>
+    <br>
+    <div id="cuadradoA">
+        <a href="wichVet?vet_id=1" class="veterinarios">Juan Rodriguez</a>
+    </div>
+    <div id="cuadradoB">
+        <a href="wichVet?vet_id=2" class="veterinarios">Marcelo Morales</a>
+    </div>
+    <div id="cuadradoC">
+        <a href="wichVet?vet_id=3" class="veterinarios">Monica Paredes</a>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<br>
 
-<a href="wichVet?vet_id=1">Juan Rodriguez</a>
-<br>
 
-<a href="wichVet?vet_id=2">Marcelo Morales</a>
-<br>
+</div>
 
-<a href="wichVet?vet_id=3">Monica Paredes</a>
+<footer>
 
-<br>
-<a href="index.html">Volver al inicio</a>
+    PULGUITAS
+
+    <p th:id="telefono">TEL:3512426215</p>
+    <p th:id="direccion">Deán Funes 1308</p>
+
+</footer>
+
+
+
 </body>
 
 

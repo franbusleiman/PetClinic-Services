@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Veterinario</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloVeterinaria.css}">
 </head>
 <body>
 
-<table >
+<div class="container">
+    <a href="index.html" id="volver">Volver al inicio</a>
+    <h1 th:align="center">Pacientes actuales</h1>
+
+
+<table>
+
     <tr>
         <th>Date</th>
-        <th>Owner First Name</th>
-        <th>Ower Last Name</th>
+        <th>Name</th>
+        <th>Last Name</th>
         <th>Tel.</th>
         <th>Pet Name</th>
         <th>Pet Type</th>
         <th>Pet Problem</th>
         <th>Pet Evolution</th>
+        <th>Editar</th>
     </tr>
+
+
 <tr th:each="owner : ${owners}">
     <td th:text="${owner.getPet().getDate()}"> </td>
     <td th:text="${owner.getFirstName()}"> </td>
@@ -26,16 +36,25 @@
     <td th:text="${owner.getPet().getPetType()}"> </td>
     <td th:text="${owner.getPet().getHealthProblem()}"> </td>
     <td th:text="${owner.getPet().getProblemEvolution()}"> </td>
-    <td><a th:href="@{/editor(owner_id=${owner.getId()}, pet_id=${owner.getPet().getId()})}">Editar </a></td>
-
-    <br>
-    <a href="index.html">Volver al inicio</a>
+    <td><a th:href="@{/editor(owner_id=${owner.getId()}, pet_id=${owner.getPet().getId()})}" id="editar">Editar </a></td>
 </tr>
-
 
 </table>
 
 
-<a href="/index">Volver al inicio</a>
+</div>
+
+
+</div>
+
+<footer>
+
+    PULGUITAS
+
+    <p th:id="telefono">TEL:3512426215</p>
+    <p th:id="direccion">Deán Funes 1308</p>
+
+</footer>
+
 </body>
 </html>

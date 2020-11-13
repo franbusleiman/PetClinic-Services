@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Editar</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloVeterinaria.css}">
 </head>
 <body>
+<div class="container">
+    <a href="index.html" id="volver">Volver al inicio</a>
+<form name="formulario" method="post" th:action="@{/modificarDatos(owner_id=${owner.getId()},pet_id=${pet.getId()})}" id="formlarge">
 
-<form name="formulario" method="post" th:action="@{/modificarDatos(owner_id=${owner.getId()},pet_id=${pet.getId()})}">
-
-    Owner First Name: <input type="text" name="firstName1" th:value="${owner.getFirstName()}">
-<br>
-    Owner Last Name: <input type="text" name="lastName1" th:value="${owner.getLastName()}">
     <br>
-    Owner Telephone Number: <input type="text" name="telephoneNumber1" th:value="${owner.getTelephoneNumber()}">
+    <p>  Owner Telephone Number: </p> <input type="text" name="telephoneNumber1" th:value="${owner.getTelephoneNumber()}">
     <br>
-    Dog Name: <input type="text" name="name1" th:value="${pet.getName()}">
+    <p>  Dog Name:</p>  <input type="text" name="name1" th:value="${pet.getName()}">
     <br/>
-    Dog Type: <select name="petType1">
+    <p>  Dog Type: </p> <select name="petType1">
     <option selected th:value="${owner.getPet().getPetType()}" th:text="${owner.getPet().getPetType()}"></option>
     <option value="Callejero">Callejero</option>
     <option value="Basset Hound">Basset Hound</option>
@@ -47,19 +46,33 @@
     <option value="Terranova">Terranova</option>
 </select>
     <br>
-    Dog Problem: <input type="text" name="healthProblem1" th:value="${pet.getHealthProblem()}">
+    <p> Dog Problem: </p> <input type="text" name="healthProblem1" th:value="${pet.getHealthProblem()}">
     <br>
-    Problem Evolution: <textarea cols="30" rows="2" name="problemEvolution1" th:value="${pet.getProblemEvolution()}"></textarea>
+    <p> Problem Evolution: </p> <input type="text" name="problemEvolution1" th:value="${pet.getProblemEvolution()}">
     <br>
 
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar"  class="button1">
 
-<br>
-    <a th:href="@{/eliminar(owner_id=${owner.getId()}, pet_id=${pet.getId()})}">Caso terminado / Eliminar</a>
+    <a th:href="@{/eliminar(owner_id=${owner.getId()}, pet_id=${pet.getId()})}"><input type="button" value="Eliminar Caso"  class="button1"></a>
 
 </form>
 <br>
-<a href="index.html">Volver al inicio</a>
+
+
+
+
+
+</div>
+
+<footer>
+
+    PULGUITAS
+
+    <p th:id="telefono">TEL:3512426215</p>
+    <p th:id="direccion">Deán Funes 1308</p>
+
+</footer>
+
 
 </body>
 </html>

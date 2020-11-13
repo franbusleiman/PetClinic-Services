@@ -78,8 +78,7 @@ public class PetController {
 
     @RequestMapping("/modificarDatos")
     public String modificarDatos(HttpServletRequest request, Model model) {
-        String firstName1 = request.getParameter("firstName1");
-        String lastName1 = request.getParameter("lastName1");
+
         String telephoneNumber1 = request.getParameter("telephoneNumber1");
         String name1 = request.getParameter("name1");
         String petType1 = request.getParameter("petType1");
@@ -89,8 +88,7 @@ public class PetController {
         int pet_id = Integer.parseInt(request.getParameter("pet_id"));
 
         if (ownerService.findById(owner_id).isPresent()) {
-            ownerService.findById(owner_id).get().setFirstName(firstName1);
-            ownerService.findById(owner_id).get().setLastName(lastName1);
+
             ownerService.findById(owner_id).get().setTelephoneNumber(telephoneNumber1);
             ownerService.save(ownerService.findById(owner_id).get());
         }

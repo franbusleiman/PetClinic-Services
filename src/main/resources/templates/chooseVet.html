@@ -2,20 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Veterinarios</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloVeterinaria.css}">
 </head>
 <body>
-<h1>ELIJA UN VETERINARIO</h1>
+<div class="container">
+    <a href="index.html" id="volver">Volver al inicio</a>
+<h1 th:align="center">Veterinarios disponibles</h1>
 <br>
-<a href="ownerPage?vet_id=1">juan Rodriguez</a>
-<br>
+<div id="cuadradoA">
+<a href="ownerPage?vet_id=1" class="veterinarios">Juan Rodriguez</a>
+</div>
+    <div id="cuadradoB">
+<a href="ownerPage?vet_id=2" class="veterinarios">Marcelo Morales</a>
+    </div>
+    <div id="cuadradoC">
+<a href="ownerPage?vet_id=3" class="veterinarios">Monica Paredes</a>
+    </div>
 
-<a href="ownerPage?vet_id=2">Marcelo Morales</a>
-<br>
 
-<a href="ownerPage?vet_id=3">Monica Paredes</a>
-<br>
-<br>
-<a href="index.html">Volver al inicio</a>
+
+
+</div>
+
+<footer>
+
+    PULGUITAS
+
+    <p th:id="telefono">TEL:3512426215</p>
+    <p th:id="direccion">Deán Funes 1308</p>
+
+</footer>
+
 </body>
 </html>

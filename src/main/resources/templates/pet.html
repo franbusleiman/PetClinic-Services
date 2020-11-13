@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Pet</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloVeterinaria.css}">
 </head>
 <body>
-
+<div class="container">
+    <a href="index.html" id="volver">Volver al inicio</a>
 <form name="formularioPet" method="post" th:action="@{/petSaver(vet_id=${vet_id},owner_id=${owner_id})}">
 
-    Dog Name: <input type="text" name="name" value="Escriba el nombre de su perro">
+   <p>Dog Name:</p>  <input type="text" name="name"  class="input">
     <br/>
-    Dog Type: <select name="petType">
+    <p>  Dog Type:</p>  <select name="petType" class="input">
     <option value="Callejero">Callejero</option>
     <option value="Basset Hound">Basset Hound</option>
     <option value="Beagle">Beagle</option>
@@ -41,13 +43,29 @@
 
 </select>
     <br/>
-    Health Problem: <input type="text" name="healthProblem" value="Escriba el problema de su perro">
+    <p> Health Problem:</p>  <input type="text" name="healthProblem"  class="input">
     <br/>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" class="button">
 
 
 
 </form>
+
+
+
+
+
+</div>
+
+<footer>
+
+    PULGUITAS
+
+    <p th:id="telefono">TEL:3512426215</p>
+    <p th:id="direccion">Deán Funes 1308</p>
+
+</footer>
+
 
 </body>
 </html>

@@ -2,6 +2,7 @@ body{
     padding:  0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 
+
 }
  h1{
      font-size: 50px;
@@ -9,11 +10,12 @@ body{
  a{
      font-family: Optima;
      color: white;
+     font-size: 40px;
  }
  .container{
      margin:-40px 0px 0px 0px;
-     padding: 30px 0px 0px 0px;
-     height: 93vh;
+     padding: 40px 0px 0px 60px;
+     height: 92vh;
      background-color: mediumslateblue;
      font-family: Optima;
      color: white;
@@ -48,17 +50,142 @@ footer {
     color: white;
     margin: -30px 20px 0px 0px;
 }
-
-.cuadrado{
-    width: 100px;
-
-padding: 100px 300px 100px 300px;
+#cuadrado1{
+    width: 50px;
+    margin:0px 50px 0px 200px;
+float:left;
+padding: 100px 280px 100px 30px;
     border-color: black;
-    background-color: cornflowerblue;
-    background-image: url("https://image.freepik.com/foto-gratis/hombre-veterinario-que-trabaja-clinica-lindo-perro-pequeno-jack-russell_139317-5281.jpg") ;
-    background-position: top;
+    background-color: darkslateblue;
+    overflow: hidden;
+    border-radius: 3px;
+}
+#cuadrado2{
+    width: 50px;
+    margin:0px 200px 0px 50px;
+    float:left;
+    padding: 100px 220px 100px 120px;
+    border-color: black;
+    background-color: darkslateblue;
+    overflow: hidden;
+    border-radius: 3px;
+}
+#cuadradoA{
+    width: 50px;
+    margin:0px 50px 0px 200px;
+    padding: 180px 105px 20px  65px;
+    float:left;
+    background-image: url("https://www.eqsnotas.com/wp-content/uploads/2020/04/jorge-gomez-casta%C3%B1on.jpeg");
+    background-position: top center;
+    background-size: 250px 150px;
     background-repeat: no-repeat;
-    background-size: 250px;
+    border-color: black;
+    background-color: darkslateblue;
+    overflow: hidden;
+    border-radius: 3px;
+}
+#cuadradoB{
+    width: 50px;
+    margin:0px 50px 0px 50px;
+    padding: 180px 105px 20px  65px;
+    float:left;
+    background-image: url("https://vetmarketportal.com.ar/uploads/noticias/5/20190112181245_dr_marin.jpeg");
+    background-position: top center;
+    background-size: 250px 150px;
+    background-repeat: no-repeat;
+
+    border-color: black;
+    background-color: darkslateblue;
+    overflow: hidden;
+    border-radius: 3px;
 
 }
+#cuadradoC{
+    width: 50px;
+    margin:0px 200px 0px 50px;
+    padding: 180px 105px 20px 65px;
+    float:left;
+background-image: url("https://cdn.lavoz.com.ar/sites/default/files/styles/width_1072/public/nota_periodistica/veterinaria_0.jpg");
+    background-position: top center;
+    background-size: 250px 150px;
+    background-repeat: no-repeat;
+    border-color: black;
+    background-color: darkslateblue;
+    overflow: hidden;
+    border-radius: 3px;
+}
 
+#volver{
+    font-size: 20px;
+    float: bottom;
+    margin: 20px 10px 0px 1100px;
+}
+.veterinarios{
+
+    font-size: 25px;
+
+
+}
+table{
+    margin-left: 20px;
+    width: 90%;
+    color: white;
+    text-align: center;
+    background-color: slateblue;
+    padding: 20px;
+    border-radius: 3px;
+
+}
+th{
+    background-color: indigo;
+
+}
+#editar{
+    font-size: 15px;
+}
+tr{
+    height: 40px;
+}
+
+form{
+    font-size: 15px;
+    margin: 100px auto;
+    background-color: slateblue;
+    padding: 10px 0px 10px 10px;
+    width: 400px;
+    border-radius: 3px;
+    font-family: Optima;
+}
+#formlarge{
+    margin: 50px auto;
+}
+
+.input{
+    margin: 15px auto;
+}
+#minicontenedor{
+    margin: 380px 800px 10px 5px;
+}
+
+
+.button{
+    font-size: 15px;
+    margin: 10px 150px;
+    background-color: indigo;
+    color: white;
+    border-radius: 3px;
+    font-size: 17px;
+
+}
+.button1{
+    font-size: 15px;
+    margin: 10px 35px;
+    background-color: indigo;
+    color: white;
+    border-radius: 3px;
+    font-size: 17px;
+}
+p{
+    font-family: Optima;
+    font-size: 17px;
+}
