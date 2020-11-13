@@ -7,16 +7,35 @@
 <body>
 
 <table >
+    <tr>
+        <th>Date</th>
+        <th>Owner First Name</th>
+        <th>Ower Last Name</th>
+        <th>Tel.</th>
+        <th>Pet Name</th>
+        <th>Pet Type</th>
+        <th>Pet Problem</th>
+        <th>Pet Evolution</th>
+    </tr>
 <tr th:each="owner : ${owners}">
-
-    <td th:text="${owner.getId()}"> </td>
+    <td th:text="${owner.getPet().getDate()}"> </td>
     <td th:text="${owner.getFirstName()}"> </td>
     <td th:text="${owner.getLastName()}"> </td>
+    <td th:text="${owner.getTelephoneNumber()}"> </td>
+    <td th:text="${owner.getPet().getName()}"> </td>
+    <td th:text="${owner.getPet().getPetType()}"> </td>
+    <td th:text="${owner.getPet().getHealthProblem()}"> </td>
+    <td th:text="${owner.getPet().getProblemEvolution()}"> </td>
+    <td><a th:href="@{/editor(owner_id=${owner.getId()}, pet_id=${owner.getPet().getId()})}">Editar </a></td>
 
+    <br>
+    <a href="index.html">Volver al inicio</a>
 </tr>
 
 
 </table>
 
+
+<a href="/index">Volver al inicio</a>
 </body>
 </html>

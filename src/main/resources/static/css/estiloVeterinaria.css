@@ -1,0 +1,64 @@
+body{
+    padding:  0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+
+}
+ h1{
+     font-size: 50px;
+ }
+ a{
+     font-family: Optima;
+     color: white;
+ }
+ .container{
+     margin:-40px 0px 0px 0px;
+     padding: 30px 0px 0px 0px;
+     height: 93vh;
+     background-color: mediumslateblue;
+     font-family: Optima;
+     color: white;
+
+ }
+
+footer {
+   text-align: center;
+    font-size: 50px;
+    font-family: Optima;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    padding: -40px 0px 30px 10px;
+    height: 9vh;
+    width: 100%;
+    background-color: blacK;
+}
+
+#telefono{
+
+   text-align: left;
+    font-family: Optima;
+    font-size: 22px;
+    color: white;
+    margin: -40px 0px 0px 20px;
+}
+#direccion{
+
+    text-align: right;
+    font-family: Optima;
+    font-size: 24px;
+    color: white;
+    margin: -30px 20px 0px 0px;
+}
+
+.cuadrado{
+    width: 100px;
+
+padding: 100px 300px 100px 300px;
+    border-color: black;
+    background-color: cornflowerblue;
+    background-image: url("https://image.freepik.com/foto-gratis/hombre-veterinario-que-trabaja-clinica-lindo-perro-pequeno-jack-russell_139317-5281.jpg") ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 250px;
+
+}
+

@@ -1,6 +1,7 @@
 package franbusleiman.PetClinic.PetClinic.controllers;
 
 import franbusleiman.PetClinic.PetClinic.model.Owner;
+import franbusleiman.PetClinic.PetClinic.model.Pet;
 import franbusleiman.PetClinic.PetClinic.services.VetService;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,11 @@ public class VetController {
 
         if(vetService.findById(vet_id).isPresent()) {
             Set<Owner> owners =  vetService.findById(vet_id).get().getOwners();
+            Set<Pet> pets = vetService.findById(vet_id).get().getPets();
             model.addAttribute("owners", owners);
+            model.addAttribute("pets", pets);
+
+
         }
 
      return "Vet";

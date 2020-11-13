@@ -1,6 +1,10 @@
 package franbusleiman.PetClinic.PetClinic.model;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -13,7 +17,15 @@ public class Pet {
     private String name;
 
     private String petType;
+
+    private String healthProblem;
+    private String problemEvolution;
+
+    private Date date;
+
+
     @OneToOne
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @JoinColumn(name = "owner_id")
     private Owner owner;
    @ManyToOne
@@ -23,9 +35,12 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(String name, String petType){
+    public Pet(String name, String petType, String healthProblem){
         this.name = name;
         this.petType = petType;
+        this.healthProblem = healthProblem;
+        this.date = date;
+
 
     }
 
@@ -81,5 +96,33 @@ public class Pet {
 
     public void setVet(Vet vet) {
         this.vet = vet;
+    }
+
+    public String getHealthProblem() {
+        return healthProblem;
+    }
+
+    public void setHealthProblem(String healthProblem) {
+        this.healthProblem = healthProblem;
+    }
+
+    public String getProblemEvolution() {
+        return problemEvolution;
+    }
+
+    public void setProblemEvolution(String problemEvolution) {
+        this.problemEvolution = problemEvolution;
+    }
+
+    public String getDate() {
+
+        SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/YYYY");
+
+        return formateador.format(date);
+    }
+
+    public void setDate(Date date) {
+
+        this.date = date;
     }
 }

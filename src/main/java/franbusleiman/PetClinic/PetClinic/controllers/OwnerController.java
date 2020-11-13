@@ -24,13 +24,14 @@ private final VetService vetService;
 
     @RequestMapping("/chooseVet")
     public String chooseVet(){
+
         return "chooseVet";
     }
 
     @RequestMapping("/ownerPage")
         public String getOwner(HttpServletRequest request, Model model){
-      int vet_Id =Integer.parseInt(request.getParameter("vet_Id"));
-        model.addAttribute("vet_Id", vet_Id);
+      int vet_id =Integer.parseInt(request.getParameter("vet_id"));
+        model.addAttribute("vet_id", vet_id);
 
            return "ownerPage";
         }
@@ -40,11 +41,12 @@ private final VetService vetService;
 
             ownerService.save(owner);
 
-       int  vet_id = Integer.parseInt(request.getParameter("vet_Id"));
+       int  vet_id = Integer.parseInt(request.getParameter("vet_id"));
 
        if(vetService.findById(vet_id).isPresent()) {
 
            owner.setVet(vetService.findById(vet_id).get());
+           ownerService.save(owner);
        }
             if(vetService.findById(vet_id).isPresent()) {
                 vetService.findById(vet_id).get().getOwners().add(owner);

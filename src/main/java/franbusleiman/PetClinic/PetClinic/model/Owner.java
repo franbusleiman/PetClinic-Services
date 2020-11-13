@@ -14,7 +14,7 @@ public class Owner {
 
     private String firstName;
     private String lastName;
-
+private String telephoneNumber;
 
     @ManyToOne
     @JoinColumn(name = "vet_id")
@@ -25,9 +25,10 @@ public class Owner {
     public Owner() {
     }
 
-    public Owner(String firstName, String lastName){
+    public Owner(String firstName, String lastName, String telephoneNumber){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.telephoneNumber = telephoneNumber;
 
     }
 
@@ -84,5 +85,13 @@ public class Owner {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
     }
 }

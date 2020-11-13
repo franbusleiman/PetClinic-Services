@@ -2,15 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Pet</title>
+    <title>Editar</title>
 </head>
 <body>
 
-<form name="formularioPet" method="post" th:action="@{/petSaver(vet_id=${vet_id},owner_id=${owner_id})}">
+<form name="formulario" method="post" th:action="@{/modificarDatos(owner_id=${owner.getId()},pet_id=${pet.getId()})}">
 
-    Dog Name: <input type="text" name="name" value="Escriba el nombre de su perro">
+    Owner First Name: <input type="text" name="firstName1" th:value="${owner.getFirstName()}">
+<br>
+    Owner Last Name: <input type="text" name="lastName1" th:value="${owner.getLastName()}">
+    <br>
+    Owner Telephone Number: <input type="text" name="telephoneNumber1" th:value="${owner.getTelephoneNumber()}">
+    <br>
+    Dog Name: <input type="text" name="name1" th:value="${pet.getName()}">
     <br/>
-    Dog Type: <select name="petType">
+    Dog Type: <select name="petType1">
+    <option selected th:value="${owner.getPet().getPetType()}" th:text="${owner.getPet().getPetType()}"></option>
     <option value="Callejero">Callejero</option>
     <option value="Basset Hound">Basset Hound</option>
     <option value="Beagle">Beagle</option>
@@ -38,16 +45,21 @@
     <option value="Rottweiler">Rottweiler </option>
     <option value="San Bernardo">San Bernardo </option>
     <option value="Terranova">Terranova</option>
-
 </select>
-    <br/>
-    Health Problem: <input type="text" name="healthProblem" value="Escriba el problema de su perro">
-    <br/>
+    <br>
+    Dog Problem: <input type="text" name="healthProblem1" th:value="${pet.getHealthProblem()}">
+    <br>
+    Problem Evolution: <textarea cols="30" rows="2" name="problemEvolution1" th:value="${pet.getProblemEvolution()}"></textarea>
+    <br>
+
     <input type="submit" value="Enviar">
 
-
+<br>
+    <a th:href="@{/eliminar(owner_id=${owner.getId()}, pet_id=${pet.getId()})}">Caso terminado / Eliminar</a>
 
 </form>
+<br>
+<a href="index.html">Volver al inicio</a>
 
 </body>
 </html>

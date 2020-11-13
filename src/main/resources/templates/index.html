@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:https="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/estiloVeterinaria.css}">
 </head>
 <body>
+<div class="container">
+<h1 th:align="center">Clínica pulguitas</h1>
+<br>
 
-QUIEN ANDA AHÍ?
-<br>
+    <div class="cuadrado" id="vet">
 <a href="/VetPage">VET</a>
-<br>
+    </div>
+    <div class="cuadrado" id="dueño">
 <a href="/chooseVet">OWNER</a>
+    </div>
+</div>
+<footer>
+
+   PULGUITAS
+
+   <p th:id="telefono">TEL:3512426215</p>
+    <p th:id="direccion">Deán Funes 1308</p>
+</footer>
 </body>
 </html>

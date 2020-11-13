@@ -7,12 +7,13 @@
 <body>
 OWNER
 <br/>
-<form th:form="formularioOwner" name="formularioOwner" method="post" th:action="@{/ownerSaver(vet_Id=${vet_Id})}">
+<form th:form="formularioOwner" name="formularioOwner" method="post" th:action="@{/ownerSaver(vet_id=${vet_id})}">
 
     First Name: <input type="text" name="firstName" value="Escriba su primer nombre">
     <br/>
     Last Name: <input type="text" name="lastName" value="Escriba su apellido">
-
+    <br/>
+    Telephone Number: <input type="text" name="telephoneNumber" value="Escriba su nº tel.">
     <input type="submit" value="Enviar">
 
 
